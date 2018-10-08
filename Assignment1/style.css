@@ -1,0 +1,15 @@
+body {
+    background-color: burlywood;
+}
+
+p {
+    margin: auto;
+}
+
+#sources, footer {
+    text-align: center;
+}
+
+nav {
+    font-size: 35px;
+}

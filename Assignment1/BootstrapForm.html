@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>CST465 Form</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label for="Name">Name:</label>
+                <input type="text" class="form-control" id="Name" placeholder="Name" name="Name">
+            </div>
+            <div class="form-group">
+                <label for="UserType" >User Type</label>
+                <select class="form-control" id="UserType" name="UserType">
+                    <option>Student</option>
+                    <option>Professor</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="EmailAddress">Email:</label>
+                <input type="email" class="form-control" id="EmailAddress" placeholder="Email" name="EmailAddress">
+            </div>
+            <div class="form-group">
+                <label for="Band">Band:</label>
+                <input type="text" class="form-control" id="Band" placeholder="Band" name="Band">
+            </div>
+            <div class="form-group">
+                <label for="Hobby">Hobby:</label>
+                <input type="text" class="form-control" id="Hobby" placeholder="Hobby" name="Hobby">
+            </div>
+            <div class="form-group">
+                <label for="CoursePrefix">Course Pre-fix:</label>
+                <input type="text" class="form-control" id="CoursePrefix" placeholder="Course prefix" name="CoursePrefix">
+            </div>
+            <div class="form-group">
+                <label for="CourseNumber">Course Number:</label>
+                <input type="text" class="form-control" id="CourseNumber" placeholder="Course number" name="CourseNumber">
+            </div>
+            <div class="form-group">
+                <label for="CourseDescription">Course Description:</label>
+                <input type="text" class="form-control" id="CourseDescription" placeholder="Course description"
+                    name="CourseDescription">
+            </div>
+            <div class="form-group">
+                 <label for="Biography">Biography:</label>
+                <textarea class="form-control" id="Biography" placeholder="Biography" name="Biography"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="Nickname">Nickname:</label>
+                <input type="text" class="form-control" id="Nickname" placeholder="Nickname" name="Nickname">
+            </div>
+
+            <button class="btn btn-default" formaction="https://www.oit.edu/cst465">Submit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
