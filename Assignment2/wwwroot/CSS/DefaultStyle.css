@@ -1,0 +1,29 @@
+﻿
+
+div, .primary {
+    background: #FFDF30;
+}
+
+body, .secondary {
+    background: #2C62D6;
+}
+
+h2 {
+    font-size: 17px;
+}
+
+form {
+    margin: 5px;
+}
+
+a {
+    font-size: 20px;
+}
+
+p {
+    font-size: 15px;
+}
+
+footer {
+    text-align: center;
+}
