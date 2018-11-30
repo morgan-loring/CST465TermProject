@@ -1,0 +1,58 @@
+﻿
+
+@model RecipeModel
+
+@section Head {
+    <link href="~/CSS/Style.css" rel="stylesheet" />
+}
+
+<h1>Add a Recipe</h1>
+
+<form asp-action="Create" asp-controller="Recipe" method="post">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description" class="form-control" ></textarea>
+        <span asp-validation-for="Description"></span>
+    </div>
+
+    <div id="IngredientCont" class="form-group">
+        <div id="Ingredients">
+            <label asp-for="Ingredients" class="control-label"></label>
+            <button id="AddIngredientButton" onclick="AddIngredient()" class="btn btn-default">Add Ingredient</button>
+            <input name="Ingredients[0]" asp-for="Ingredients" class="form-control IngredientForm" />
+        </div>
+        <span asp-validation-for="Ingredients"></span>
+    </div>
+
+
+    <div id="StepCont" class="form-group">
+        <div id="Steps">
+            <label asp-for="Steps" class="control-label"></label>
+            <button id="AddStepButton" onclick="AddStep()" class="btn btn-default">Add Step</button>
+            <textarea name="Steps[0]" asp-for="Steps" class="form-control StepForm" ></textarea>
+        </div>
+        <span asp-validation-for="Steps"></span>
+    </div>
+
+    <button type="Submit" class="btn btn-default">Create Recipe</button>
+
+</form>
+
+<script type="text/javascript">
+    function AddIngredient() {
+        let numIngre = document.getElementsByClassName('IngredientForm').length;
+        document.getElementById("Ingredients").innerHTML += '<input name="Ingredients[' + numIngre.toString() + ']" asp-for="Ingredients" class="form-control IngredientForm" />'
+    }
+
+    function AddStep() {
+        let numSteps = document.getElementsByClassName('StepForm').length;
+        document.getElementById("Steps").innerHTML += '<textarea name="Steps[' + numSteps.toString() + ']" asp-for="Steps" class="form-control StepForm"></textarea>'
+    }
+</script>
