@@ -25,7 +25,7 @@
     <div id="IngredientCont" class="form-group">
         <div id="Ingredients">
             <label asp-for="Ingredients" class="control-label"></label>
-            <button id="AddIngredientButton" onclick="AddIngredient()" class="btn btn-default">Add Ingredient</button>
+            <button type="button" id="AddIngredientButton" onclick="AddIngredient()" class="btn btn-default">Add Ingredient</button>
             <input name="Ingredients[0]" asp-for="Ingredients" class="form-control IngredientForm" />
         </div>
         <span asp-validation-for="Ingredients"></span>
@@ -35,7 +35,7 @@
     <div id="StepCont" class="form-group">
         <div id="Steps">
             <label asp-for="Steps" class="control-label"></label>
-            <button id="AddStepButton" onclick="AddStep()" class="btn btn-default">Add Step</button>
+            <button type="button" id="AddStepButton" onclick="AddStep()" class="btn btn-default">Add Step</button>
             <textarea name="Steps[0]" asp-for="Steps" class="form-control StepForm" ></textarea>
         </div>
         <span asp-validation-for="Steps"></span>
@@ -48,11 +48,11 @@
 <script type="text/javascript">
     function AddIngredient() {
         let numIngre = document.getElementsByClassName('IngredientForm').length;
-        document.getElementById("Ingredients").innerHTML += '<input name="Ingredients[' + numIngre.toString() + ']" asp-for="Ingredients" class="form-control IngredientForm" />'
+        $("#Ingredients").append('<input name="Ingredients[' + numIngre.toString() + ']" class="form-control IngredientForm" />')
     }
 
     function AddStep() {
         let numSteps = document.getElementsByClassName('StepForm').length;
-        document.getElementById("Steps").innerHTML += '<textarea name="Steps[' + numSteps.toString() + ']" asp-for="Steps" class="form-control StepForm"></textarea>'
+        $("#Steps").append('<textarea name="Steps[' + numSteps.toString() + ']" class="form-control StepForm"></textarea>')
     }
 </script>
