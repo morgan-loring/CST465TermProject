@@ -1,10 +1,24 @@
 ﻿
 @model RecipeModel
 
+@inject RoleManager<IdentityRole> RoleMan
+@inject UserManager<IdentityUser> UserMan
+
 <div class="card">
     <div class="card-body">
-        <h5>@Model.Name</h5>
-        <p>@Model.Description</p>
+        <div class="row card-header">
+            <h5 class="card-title">@Model.Name</h5>
+            @if (User.IsInRole("Admin"))
+            {
+                <form asp-action="DeleteRecipe" asp-controller="Recipe" method="post">
+                    <div class="form-group">
+                        <input type="hidden" asp-for="@Model.ID" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            }
+        </div>
+        <p class="card-text">@Model.Description</p>
     </div>
 </div>
 
@@ -29,3 +43,4 @@
         </ul>
     </div>
 </div>
+

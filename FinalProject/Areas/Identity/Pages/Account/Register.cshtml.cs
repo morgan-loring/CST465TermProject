@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -17,17 +18,20 @@ namespace FinalProject.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
+            RoleManager<IdentityRole> roleManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
             _logger = logger;
             _emailSender = emailSender;
         }
@@ -54,6 +58,9 @@ namespace FinalProject.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [Display(Name = "Register as Admin?")]
+            public bool Admin { get; set; }
         }
 
         public void OnGet(string returnUrl = null)
@@ -68,6 +75,15 @@ namespace FinalProject.Areas.Identity.Pages.Account
             {
                 var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
+
+                if (_roleManager.FindByNameAsync("Admin").Result == null)
+                {
+                    IdentityRole adminRole = new IdentityRole();
+                    adminRole.Name = "Admin";
+                    await _roleManager.CreateAsync(adminRole);
+                }
+                if (Input.Admin) await _userManager.AddToRoleAsync(user, "Admin");
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");

@@ -12224,11 +12224,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Morgan\\Documents\\OIT\\CST 465\\CST465TermProject\\Assignment2\\Assignment2.csproj",
+      "projectUniqueName": "C:\\Users\\Morgan\\Documents\\OIT\\CST_465\\CST465TermProject\\Assignment2\\Assignment2.csproj",
       "projectName": "Assignment2",
-      "projectPath": "C:\\Users\\Morgan\\Documents\\OIT\\CST 465\\CST465TermProject\\Assignment2\\Assignment2.csproj",
+      "projectPath": "C:\\Users\\Morgan\\Documents\\OIT\\CST_465\\CST465TermProject\\Assignment2\\Assignment2.csproj",
       "packagesPath": "C:\\Users\\Morgan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Morgan\\Documents\\OIT\\CST 465\\CST465TermProject\\Assignment2\\obj\\",
+      "outputPath": "C:\\Users\\Morgan\\Documents\\OIT\\CST_465\\CST465TermProject\\Assignment2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

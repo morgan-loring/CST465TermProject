@@ -10,5 +10,6 @@ namespace FinalProject.Repositories
     {
         void Insert(int key, int order, string step);
         List<string> GetSteps(int id);
+        void Delete(int id);
     }
 }

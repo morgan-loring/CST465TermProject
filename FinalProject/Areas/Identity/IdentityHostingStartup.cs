@@ -19,7 +19,11 @@ namespace FinalProject.Areas.Identity
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("FinalProjectContextConnection")));
 
-                services.AddDefaultIdentity<IdentityUser>()
+                services.AddIdentity<IdentityUser, IdentityRole>()
+                    .AddRoleManager<RoleManager<IdentityRole>>()
+                    .AddDefaultUI()
+                    .AddDefaultTokenProviders()
+                    .AddRoles<IdentityRole>()
                     .AddEntityFrameworkStores<FinalProjectContext>();
             });
         }

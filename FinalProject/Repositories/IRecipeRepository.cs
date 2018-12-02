@@ -11,5 +11,7 @@ namespace FinalProject.Repositories
         int Insert(RecipeModel model);
         RecipeModel GetRecipe(int RecipeID);
         List<RecipeModel> Search(string SearchString);
+        List<RecipeModel> GetList();
+        void Delete(int id);
     }
 }

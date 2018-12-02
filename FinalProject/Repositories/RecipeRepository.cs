@@ -29,7 +29,7 @@ namespace FinalProject.Repositories
                 {
                     connection.Open();
                     command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@UserID", "asdf");
+                    command.Parameters.AddWithValue("@UserID", model.UserID);
                     command.Parameters.AddWithValue("@Name", model.Name);
                     command.Parameters.AddWithValue("@Description", model.Description);
                     newKey = Convert.ToInt32(command.ExecuteScalar());
@@ -89,6 +89,47 @@ namespace FinalProject.Repositories
                 }
             }
             return recipes;
+        }
+
+        public List<RecipeModel> GetList()
+        {
+            List<RecipeModel> recipes = null;
+            using (SqlConnection connection = new SqlConnection(_config["ConnectionString"]))
+            {
+                using (SqlCommand command = new SqlCommand("Recipes_GetList", connection))
+                {
+                    connection.Open();
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        recipes = new List<RecipeModel>();
+                        while (reader.Read())
+                        {
+                            var temp = new RecipeModel();
+                            temp.UserID = (string)reader["UserID"];
+                            temp.ID = Convert.ToInt32(reader["ID"]);
+                            temp.Name = (string)reader["Name"];
+                            temp.Description = (string)reader["Description"];
+                            recipes.Add(temp);
+                        }
+                    }
+                }
+            }
+            return recipes;
+        }
+
+        public void Delete(int RecipeID)
+        {
+            using (SqlConnection connection = new SqlConnection(_config["ConnectionString"]))
+            {
+                using (SqlCommand command = new SqlCommand("Recipes_Delete", connection))
+                {
+                    connection.Open();
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@RecipeID", RecipeID);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
     }
 }

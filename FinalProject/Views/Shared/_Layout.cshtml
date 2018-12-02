@@ -11,16 +11,22 @@
 </head>
 <body class="container">
     <nav class="topnav">
-        @Html.ActionLink("Home", "Index", "Home")
-        @Html.ActionLink("Recipies", "Index", "Recipe")
-        <div class="form-group">
-            <form asp-action="Search" asp-controller="Recipe" method="post">
-                <div class="row SearchBox form-group">
-                    @*<label for="SearchString" class="control-label">Search for a Recipe</label>*@
-                    <input id="SearchBar" type="search" name="SearchString" class="col-10 form-control" placeholder="Search a Recipe..." />
-                    <button type="submit" class="col-2 btn">Search</button>
-                </div>
-            </form>
+        <div class="row">
+            <div class="col-3">
+                @Html.ActionLink("Home", "Index", "Home")
+                @Html.ActionLink("Recipies", "Index", "Recipe")
+            </div>
+            <div class="col-7 form-group">
+                <form asp-action="Search" asp-controller="Recipe" method="post">
+                    <div class=" SearchBox form-group">
+                        <input id="SearchBar" type="search" name="SearchString" class=" form-control" placeholder="Search a Recipe..." />
+                        <button type="submit" class="btn">Search</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-2">
+                <partial name="_LoginPartial" />
+            </div>
         </div>
     </nav>
 
@@ -31,5 +37,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.js"></script>
+    @RenderSection("Scripts", false)
 </body>
 </html>

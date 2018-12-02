@@ -10,5 +10,6 @@ namespace FinalProject.Repositories
     {
         void Insert(int key, int order, string ingredient);
         List<string> GetIngredients(int id);
+        void Delete(int id);
     }
 }

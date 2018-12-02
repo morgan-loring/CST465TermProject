@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FinalProject.Models;
 using FinalProject.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject.Controllers
@@ -21,12 +22,23 @@ namespace FinalProject.Controllers
             _stepsRepository = stepsRepository;
         }
 
+        [HttpGet]
         public IActionResult Index()
-        { 
+        {
+            var model = _recipeRepository.GetList();
+            return View("SearchResults", model);
+        }
+
+        [HttpGet]
+        [Authorize]
+        public IActionResult AddRecipe()
+        {
             return View();
         }
 
         [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(RecipeModel model)
         {
             for(int ii = 0; ii < model.Ingredients.Count; ii++)
@@ -46,6 +58,7 @@ namespace FinalProject.Controllers
                 }
             }
 
+            model.UserID = User.Claims.ElementAt(0).Value;
             int newKey = _recipeRepository.Insert(model);
             for (int ii = 0; ii < model.Ingredients.Count; ii++)
             {
@@ -71,6 +84,16 @@ namespace FinalProject.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public IActionResult DeleteRecipe(int id)
+        {
+            _ingredientRepository.Delete(id);
+            _stepsRepository.Delete(id);
+            _recipeRepository.Delete(id);
+            return RedirectToAction("Index", "Recipe");
+        }
+
+        [HttpPost]
         public IActionResult Search(string SearchString)
         {
             if (SearchString == null)
@@ -81,9 +104,5 @@ namespace FinalProject.Controllers
             return View("SearchResults", models);
         }
 
-        //public IActionResult SearchResults(List<RecipeModel> models)
-        //{
-        //    return View(models);
-        //}
     }
 }

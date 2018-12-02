@@ -58,5 +58,19 @@ namespace FinalProject.Repositories
             }
             return steps;
         }
+
+        public void Delete(int RecipeID)
+        {
+            using (SqlConnection connection = new SqlConnection(_config["ConnectionString"]))
+            {
+                using (SqlCommand command = new SqlCommand("Steps_Delete", connection))
+                {
+                    connection.Open();
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@RecipeID", RecipeID);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
