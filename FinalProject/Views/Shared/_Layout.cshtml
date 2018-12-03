@@ -11,19 +11,21 @@
 </head>
 <body class="container">
     <nav class="topnav">
-        <div class="row">
-            <div class="col-3">
+        <div class="inner row">
+            <div class="col-1">
                 @Html.ActionLink("Home", "Index", "Home")
+            </div>
+            <div class="col-1">
                 @Html.ActionLink("Recipies", "Index", "Recipe")
             </div>
-            <div class="col-7 form-group">
-                <form asp-action="Search" asp-controller="Recipe" method="post">
-                    <div class=" SearchBox form-group">
-                        <input id="SearchBar" type="search" name="SearchString" class=" form-control" placeholder="Search a Recipe..." />
-                        <button type="submit" class="btn">Search</button>
-                    </div>
-                </form>
-            </div>
+
+            <form asp-action="Search" class="col-8" asp-controller="Recipe" method="post">
+                <div class="row SearchBox form-group">
+                    <input id="SearchBar" type="search" name="SearchString" class="form-control col-10" placeholder="Search a Recipe..." />
+                    <button type="submit" class="btn col-2">Search</button>
+                </div>
+            </form>
+
             <div class="col-2">
                 <partial name="_LoginPartial" />
             </div>
@@ -40,3 +42,58 @@
     @RenderSection("Scripts", false)
 </body>
 </html>
+
+
+@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <title>Recipies</title>
+        <link href="~/CSS/LayoutStyle.css" rel="stylesheet" />
+
+        @RenderSection("Head", false)
+    </head>
+    <body class="container grid">
+        <nav class="topnav">
+            <div class="row">
+                <div class="col-3">
+                    <div class="grid">
+                        <div class="row">
+                            <div class="col-3">
+                                @Html.ActionLink("Home", "Index", "Home")
+                            </div>
+                            <div class="col-3">
+                                @Html.ActionLink("Recipies", "Index", "Recipe")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-7">
+                    <form asp-action="Search" asp-controller="Recipe" method="post">
+                        <div class=" form-group grid SearchBox">
+                            <div class="row">
+                                <input id="SearchBar" type="search" name="SearchString" class="col-10 form-control" placeholder="Search a Recipe..." />
+                                <button type="submit" class="btn col-2">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-2">
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+
+        <div>
+            @RenderBody()
+        </div>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.js"></script>
+        @RenderSection("Scripts", false)
+    </body>
+    </html>*@
