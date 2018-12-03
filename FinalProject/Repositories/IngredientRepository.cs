@@ -20,7 +20,7 @@ namespace FinalProject.Repositories
             _config = config;
         }
 
-        public void Insert(int key, int order, string ingredient)
+        public virtual void Insert(int key, int order, string ingredient)
         {
             using (SqlConnection connection = new SqlConnection(_config["ConnectionString"]))
             {
@@ -36,7 +36,7 @@ namespace FinalProject.Repositories
             }
         }
 
-        public List<string> GetIngredients(int RecipeID)
+        public virtual List<string> GetIngredients(int RecipeID)
         {
             List<string> ingredients = null;
             using (SqlConnection connection = new SqlConnection(_config["ConnectionString"]))
@@ -59,7 +59,7 @@ namespace FinalProject.Repositories
             return ingredients;
         }
 
-        public void Delete(int RecipeID)
+        public virtual void Delete(int RecipeID)
         {
             using (SqlConnection connection = new SqlConnection(_config["ConnectionString"]))
             {

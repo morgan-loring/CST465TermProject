@@ -48,7 +48,9 @@ C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\n
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.g.cshtml.cs
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\_ViewImports.g.cshtml.cs
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
+C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\Razor\Views\Home\Error.g.cshtml.cs
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\Razor\Views\Recipe\AddRecipe.g.cshtml.cs
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\Razor\Views\Recipe\DisplayRecipe.g.cshtml.cs
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\Razor\Views\Recipe\SearchResults.g.cshtml.cs
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
@@ -62,5 +64,3 @@ C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\n
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\FinalProject.dll
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\FinalProject.pdb
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\FinalProject.csproj.CopyComplete
-C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\Razor\Views\Recipe\AddRecipe.g.cshtml.cs
-C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\FinalProject.csprojAssemblyReference.cache

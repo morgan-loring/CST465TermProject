@@ -20,7 +20,7 @@ namespace FinalProject.Repositories
             _config = config;
         }
 
-        public int Insert(RecipeModel model)
+        public virtual int Insert(RecipeModel model)
         {
             int newKey;
             using (SqlConnection connection = new SqlConnection(_config["ConnectionString"]))
@@ -38,7 +38,7 @@ namespace FinalProject.Repositories
             return newKey;
         }
 
-        public RecipeModel GetRecipe(int RecipeID)
+        public virtual RecipeModel GetRecipe(int RecipeID)
         {
             RecipeModel recipe = null;
             using (SqlConnection connection = new SqlConnection(_config["ConnectionString"]))
@@ -63,7 +63,7 @@ namespace FinalProject.Repositories
             return recipe;
         }
 
-        public List<RecipeModel> Search(string SearchString)
+        public virtual List<RecipeModel> Search(string SearchString)
         {
             List<RecipeModel> recipes = null;
             using (SqlConnection connection = new SqlConnection(_config["ConnectionString"]))
@@ -91,7 +91,7 @@ namespace FinalProject.Repositories
             return recipes;
         }
 
-        public List<RecipeModel> GetList()
+        public virtual List<RecipeModel> GetList()
         {
             List<RecipeModel> recipes = null;
             using (SqlConnection connection = new SqlConnection(_config["ConnectionString"]))
@@ -118,7 +118,7 @@ namespace FinalProject.Repositories
             return recipes;
         }
 
-        public void Delete(int RecipeID)
+        public virtual void Delete(int RecipeID)
         {
             using (SqlConnection connection = new SqlConnection(_config["ConnectionString"]))
             {

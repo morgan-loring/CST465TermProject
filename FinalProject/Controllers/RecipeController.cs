@@ -74,12 +74,16 @@ namespace FinalProject.Controllers
         }
 
         [HttpGet]
+        [Route("Recipe/DisplayRecipe/{id}")]
         public IActionResult DisplayRecipe(int ID)
         {
-            RecipeModel model = _recipeRepository.GetRecipe(ID);
-            model.Ingredients = _ingredientRepository.GetIngredients(ID);
-            model.Steps = _stepsRepository.GetSteps(ID);
-
+            RecipeModel model = null;
+            if (ModelState.IsValid)
+            {
+                model = _recipeRepository.GetRecipe(ID);
+                model.Ingredients = _ingredientRepository.GetIngredients(ID);
+                model.Steps = _stepsRepository.GetSteps(ID);
+            }
             return View(model);
         }
 
@@ -87,21 +91,31 @@ namespace FinalProject.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult DeleteRecipe(int id)
         {
-            _ingredientRepository.Delete(id);
-            _stepsRepository.Delete(id);
-            _recipeRepository.Delete(id);
+            if (ModelState.IsValid)
+            {
+                _ingredientRepository.Delete(id);
+                _stepsRepository.Delete(id);
+                _recipeRepository.Delete(id);
+            }
             return RedirectToAction("Index", "Recipe");
         }
 
         [HttpPost]
         public IActionResult Search(string SearchString)
         {
-            if (SearchString == null)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Index", "Home");
+                if (SearchString == null)
+                {
+                    return View("SearchResults", null);
+                }
+                List<RecipeModel> models = _recipeRepository.Search(SearchString);
+                return View("SearchResults", models);
             }
-            List<RecipeModel> models = _recipeRepository.Search(SearchString);
-            return View("SearchResults", models);
+            else
+            {
+                return View("SearchResults", null);
+            }
         }
 
     }
