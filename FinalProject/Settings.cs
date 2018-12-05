@@ -7,6 +7,8 @@ namespace FinalProject
 {
     public class Settings
     {
-        public string ConnectionString { get; set; }
+        public bool AllowDelete { get; set; }
+        public bool AllowInsert { get; set; }
+        public int FeaturedRecipeID { get; set; }
     }
 }
