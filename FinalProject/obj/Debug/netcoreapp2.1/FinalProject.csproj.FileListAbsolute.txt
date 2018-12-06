@@ -5,6 +5,7 @@ C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\bin\Debug\n
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\bin\Debug\netcoreapp2.1\FinalProject.pdb
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\bin\Debug\netcoreapp2.1\FinalProject.Views.dll
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\bin\Debug\netcoreapp2.1\FinalProject.Views.pdb
+C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\FinalProject.csprojAssemblyReference.cache
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\FinalProject.csproj.CoreCompileInputs.cache
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\FinalProject.RazorAssemblyInfo.cache
 C:\Users\Morgan\Documents\OIT\CST_465\CST465TermProject\FinalProject\obj\Debug\netcoreapp2.1\FinalProject.RazorAssemblyInfo.cs

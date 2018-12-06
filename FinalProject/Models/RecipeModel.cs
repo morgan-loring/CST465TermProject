@@ -17,10 +17,10 @@ namespace FinalProject.Models
         [Required(ErrorMessage = "Enter a description")]
         public string Description { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please list the ingredients")]
         public List<string> Ingredients { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please list the steps")]
         public List<string> Steps { get; set; }
     }
 }

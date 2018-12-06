@@ -28,7 +28,7 @@
             <button type="button" id="AddIngredientButton" onclick="AddIngredient()" class="btn btn-default">Add Ingredient</button>
             <input name="Ingredients[0]" asp-for="Ingredients" class="form-control IngredientForm" />
         </div>
-        <span asp-validation-for="Ingredients"></span>
+        <span asp-validation-for="Ingredients[0]"></span>
     </div>
 
 
@@ -38,7 +38,7 @@
             <button type="button" id="AddStepButton" onclick="AddStep()" class="btn btn-default">Add Step</button>
             <textarea name="Steps[0]" asp-for="Steps" class="form-control StepForm" ></textarea>
         </div>
-        <span asp-validation-for="Steps"></span>
+        <span asp-validation-for="Steps[0]"></span>
     </div>
 
     <button type="Submit" class="btn btn-default">Create Recipe</button>
